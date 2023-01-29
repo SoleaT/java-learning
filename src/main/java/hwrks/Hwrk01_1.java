@@ -1,10 +1,9 @@
-package hwrk01;
+package hwrks;
 
 import java.util.Arrays;
 import java.util.Random;
-import java.util.Scanner;
 
-public class hwrk01_1 {
+public class Hwrk01_1 {
     private static int arrSize = 20, minDigit = 1, maxDigit = 99;
 
     public static void main(String[] args) {

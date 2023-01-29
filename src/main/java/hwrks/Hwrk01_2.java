@@ -1,8 +1,8 @@
-package hwrk01;
+package hwrks;
 
 import java.util.Scanner;
 
-public class hwrk01_2 {
+public class Hwrk01_2 {
     public static void main(String[] args) {
         System.out.print("Введите год: ");
         int inputYear = readDigit();

@@ -1,10 +1,10 @@
-package hwrk01;
+package hwrks;
 
 import java.util.Arrays;
 import java.util.Random;
 import java.util.Scanner;
 
-public class hwrk01 {
+public class Hwrk01_0 {
     private static int arrSize = 20, minDigit=1, maxDigit=3, inputDigit;
     public static void main(String[] args) {
         System.out.printf("Введите число, которое нужно переместить (%d-%d): ", minDigit,maxDigit);
