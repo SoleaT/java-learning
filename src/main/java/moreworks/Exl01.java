@@ -10,7 +10,7 @@ import static moreworks.Stuff_hwrk.readDigit;
 public class Exl01 {
     public static void main(String[] args) {
         System.out.print("Введите степень многочлена k: ");
-        int k = readDigit(), range = 2;
+        int k = readDigit(), range = 100;
         System.out.println(createPolynome(k, range));
     }
 
