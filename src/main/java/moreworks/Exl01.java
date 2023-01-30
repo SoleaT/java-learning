@@ -32,7 +32,7 @@ public class Exl01 {
                 } else if (i == 1) {
                     resultPolynome += String.format("%s%sx", pref, numstr);
                 } else {
-                    resultPolynome += String.format("%s%s", pref, numstr);
+                    resultPolynome += String.format("%s%s", pref, abs(tempNumber));
                 }
             }
         }
