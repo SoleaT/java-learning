@@ -12,10 +12,8 @@ public class Hwrk04_2 {
     }
 
     private static void reverseLL(LinkedList<String> workArray) {
-        String temp;
         for (int i = 0; i < workArray.size()-1; i++) {
-            temp = workArray.getLast();
-            workArray.add(i, temp);
+            workArray.add(i, workArray.getLast());
             workArray.removeLast();
         }
     }
