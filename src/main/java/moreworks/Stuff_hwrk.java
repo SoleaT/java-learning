@@ -24,14 +24,13 @@ public class Stuff_hwrk {
     }
 
     public static int readDigit() {
-        int temp;
         Scanner readL = new Scanner(System.in);
         return readL.nextInt();
     }
 
     public static String readStr() {
         Scanner readL = new Scanner(System.in);
-        return readL.next();
+        return readL.nextLine();
     }
 }
 
