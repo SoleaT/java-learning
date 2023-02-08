@@ -8,6 +8,13 @@ import java.util.regex.Pattern;
 public class Exl02 {
     private int multNum, degree;
 
+    @Override
+    public String toString() {
+        return " " +
+                multNum + "x" +
+                "^" + degree;
+    }
+
     public Exl02(int multNum, int degree) {
         this.multNum = multNum;
         this.degree = degree;
@@ -22,6 +29,8 @@ public class Exl02 {
         ArrayList<Exl02> expressions2 = parsePolynome(readedStr2);
         int maxDegree = Math.max(expressions1.get(0).degree, expressions2.get(0).degree);
         int[] expressionsFin = new int[maxDegree + 1];
+        System.out.println(expressions1);
+
         //И ТУТ ЗДОРОВЕННЫЙ КОСТЫЛЬ!
         for (Exl02 item : expressions1) {
             expressionsFin[item.degree] = item.multNum;
@@ -64,7 +73,7 @@ public class Exl02 {
             //а дальше ад потому, что мне не захотелось создавать паттерн и матчер для каждой запчасти и я разобрала вручную
             //впрочем, не факт, что было б сильно короче. но придётся комменты писать, а то всё забуду
             tmpMult = "";
-            tempStr = parseStr.substring(matcher.start(), matcher.end()); //в отдельную строчку - подстроку с выражением
+            tempStr = matcher.group(); //в отдельную строчку - подстроку с выражением
 //            System.out.printf("Подстрока: %s|",tempStr);   //debug
             symb = tempStr.substring(0, 1);                  //что там со знаком, он есть?
             if (symb.equals("-") | symb.equals("+")) {       //если был знак, то обрезаем его
@@ -87,10 +96,10 @@ public class Exl02 {
             }
             mult = symb.equals("-") ? -mult : mult; //если был знак -, то надо сделать число отрицательным
             if (tempStr.indexOf('^') != -1) {       //если в выражении есть степень, находим ее
-                deg = Integer.parseInt(tempStr.substring(tempStr.indexOf('^') + 1, tempStr.length()));
-            } else if (tempStr.indexOf('x') == -1) { //а если просто число, стало быть, степень =0
+                deg = Integer.parseInt(tempStr.substring(tempStr.indexOf('^') + 1));
+            } else if (tempStr.indexOf('x') == -1) { //а если просто число, стало быть, степень = 0
                 deg = 0;
-            } else {                                 //а если x, то =1
+            } else {                                 //а если просто x, то степень = 1
                 deg = 1;
             }
             exprs.add(new Exl02(mult, deg)); //записываем в список

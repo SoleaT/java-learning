@@ -23,15 +23,14 @@ public class Exl01 {
             if (tempNumber != 0) {
                 pref = tempNumber < 0 ? //минус должен быть всегда, поэтому, если сгенерилось отр. число, то префикс -
                         " - " :
-                        resultPolynome.length() == 0 ? //а плюс - только если не первый элемент
-                                " " :
-                                " + ";
+                        resultPolynome.length() == 0 ? " " : " + ";  //а плюс - только если не первый элемент
                 numstr = tempNumber==1 | tempNumber==-1 ? "" : ""+abs(tempNumber);
                 if (i > 1) {
                     resultPolynome += String.format("%s%sx^%s", pref, numstr, i);
                 } else if (i == 1) {
                     resultPolynome += String.format("%s%sx", pref, numstr);
                 } else {
+                    pref = pref.equals(" - ") & tempNumber == 0 ? "" : pref;
                     resultPolynome += String.format("%s%s", pref, abs(tempNumber));
                 }
             }
