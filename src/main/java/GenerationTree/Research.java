@@ -5,7 +5,7 @@ public interface Research {
 
 
     //Исследование связей между двумя людьми
-    void twoPeopleRelations(FamilyPerson p1, FamilyPerson p2);
+//    void twoPeopleRelations(FamilyPerson p1, FamilyPerson p2);
 
     //Исследование связей одного человека
     default void printResearchInfo(FamilyPerson p) {

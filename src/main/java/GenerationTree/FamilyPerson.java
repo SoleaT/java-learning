@@ -47,9 +47,9 @@ public class FamilyPerson extends Person implements IO, Research {
         this.parents = parents;
     }
 
-    @Override
-    public void twoPeopleRelations(FamilyPerson p1, FamilyPerson p2) {
-        System.out.println("Еще не реализован");
-    }
+//    @Override
+//    public void twoPeopleRelations(FamilyPerson p1, FamilyPerson p2) {
+//        System.out.println("Еще не реализован");
+//    }
 
 }
