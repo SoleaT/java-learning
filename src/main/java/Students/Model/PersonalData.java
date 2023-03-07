@@ -1,7 +1,6 @@
 package Students.Model;
 
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.jetbrains.annotations.NotNull;
 
@@ -10,7 +9,6 @@ import java.util.Calendar;
 //личные данные студентов
 @Getter
 @Setter
-@NoArgsConstructor
 public class PersonalData implements Comparable<PersonalData> {
     protected int id;
     protected String name;
@@ -20,6 +18,9 @@ public class PersonalData implements Comparable<PersonalData> {
     protected String inn;
     private static int idIncrement=0;
 
+    public PersonalData(){
+        this.setId(idIncrement++);
+    }
     public PersonalData(String name, String surname, Calendar birthDate, String phone, String inn) {
         this.name = name;
         this.surname = surname;
